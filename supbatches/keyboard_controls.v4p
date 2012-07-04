@@ -1,0 +1,89 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.1.dtd" >
+   <PATCH nodename="C:\Users\PLAYER\Documents\20120522_Usher\PATCH\supbatches\keyboard_controls.v4p" filename="C:\Users\PLAYER\Documents\20120522_Usher\PATCH\keyboard_controls.v4p" systemname="keyboard_controls">
+   <BOUNDS height="6000" left="2160" top="1215" type="Window" width="9000">
+   </BOUNDS>
+   <NODE componentmode="Hidden" id="0" nodename="Keyboard (System Global)" systemname="Keyboard (System Global)">
+   <BOUNDS height="100" left="885" top="645" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Keyboard Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="1" nodename="KeyMatch (String)" systemname="KeyMatch (String)">
+   <BOUNDS height="270" left="885" top="1065" type="Node" width="1455">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN encoded="0" pinname="Key Match" slicecount="1" values="|&lt;F5&gt;,&lt;F6&gt;|">
+   </PIN>
+   <PIN pinname="&lt;F5&gt; Output" visible="1">
+   </PIN>
+   <PIN pinname="&lt;F6&gt; Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="1" dstpinname="Input" srcnodeid="0" srcpinname="Keyboard Output">
+   </LINK>
+   <NODE systemname="S (Value)" nodename="S (Value)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="855" top="2205" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Send String" slicecount="1" values="|Calibration ON/OFF|" encoded="0">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Toggle (Animation)" nodename="Toggle (Animation)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="870" top="1800" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="885" top="1455" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="&lt;F5&gt; Output" dstnodeid="5" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Up Edge" dstnodeid="4" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="2" dstpinname="Input Value">
+   </LINK>
+   <NODE componentmode="Hidden" id="8" nodename="S (Value)" systemname="S (Value)">
+   <BOUNDS height="100" left="2250" top="2250" type="Node" width="100">
+   </BOUNDS>
+   <PIN encoded="0" pinname="Send String" slicecount="1" values="|Info ON/OFF|">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="7" nodename="Toggle (Animation)" systemname="Toggle (Animation)">
+   <BOUNDS height="100" left="2265" top="1845" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="6" nodename="TogEdge (Animation)" systemname="TogEdge (Animation)">
+   <BOUNDS height="100" left="2280" top="1500" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="Input" srcnodeid="6" srcpinname="Up Edge">
+   </LINK>
+   <LINK dstnodeid="8" dstpinname="Input Value" srcnodeid="7" srcpinname="Output">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="&lt;F5&gt; Output" dstnodeid="6" dstpinname="Input">
+   </LINK>
+   </PATCH>
